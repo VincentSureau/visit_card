@@ -3,11 +3,17 @@
 {% block title %}Edit Card{% endblock %}
 
 {% block body %}
-    <h1>Edit Card</h1>
+    <div class="card border-0 shadow-lg">
+        <div class="card-header border-0">
+            Edit card
+        </div>
+        <div class="card-body">
+            {{ include('card/_delete_form.html.twig') }}
+            {{ include('card/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('card/_form.html.twig', {'button_label': 'Update'}) }}
+            <a href="{{ path('app_card_index') }}">back to list</a>
 
-    <a href="{{ path('app_card_index') }}">back to list</a>
+        </div>
+    </div>
 
-    {{ include('card/_delete_form.html.twig') }}
 {% endblock %}
