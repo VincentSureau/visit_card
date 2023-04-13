@@ -40,6 +40,10 @@ class Card
     #[ORM\Column(length: 255)]
     private ?string $civility = null;
 
+    #[ORM\ManyToOne(inversedBy: 'cards')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -149,6 +153,18 @@ class Card
     public function setCivility(string $civility): self
     {
         $this->civility = $civility;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
