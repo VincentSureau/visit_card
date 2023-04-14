@@ -85,7 +85,8 @@
         "reset": [
             "symfony console doctrine:database:drop --force",
             "symfony console doctrine:database:create",
-            "symfony console doctrine:migration:migrate -n"
+            "symfony console doctrine:migration:migrate -n",
+            "symfony console doctrine:fixture:load -n"
         ]
     },
     "conflict": {
@@ -98,6 +99,8 @@
         }
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "fakerphp/faker": "^1.21",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "6.2.*",
         "symfony/css-selector": "6.2.*",
