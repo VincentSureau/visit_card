@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 body {
     background-color: #FBDA61;
     background-image: linear-gradient(104deg, #FBDA61 0%, #FF5ACD 100%);       
+}
+
+.navbar-brand {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.75rem;
 }
 
 .radio-margin .form-check {
