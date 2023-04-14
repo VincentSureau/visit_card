@@ -25,7 +25,7 @@ class CardType extends AbstractType
                 'multiple' => false,
                 'expanded' => true,
                 'attr' => [
-                    'class' => 'd-flex',
+                    'class' => 'd-flex radio-margin',
                 ],
             ])
             ->add('firstname', TextType::class, [
@@ -44,7 +44,8 @@ class CardType extends AbstractType
                 'label' => 'Adresse'
             ])
             ->add('address2', TextType::class, [
-                'label' => 'Complément d\'adresse'
+                'label' => 'Complément d\'adresse',
+                'required' => false
             ])
             ->add('postCode', TextType::class, [
                 'label' => 'Code postal'
