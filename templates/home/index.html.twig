@@ -4,26 +4,30 @@
 
 {% block body %}
 
-{% for card in cards %}
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" class="img-fluid rounded-start" alt="">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{ card.civility }} {{ card.lastname }} {{ card.firstname }}</h5>
-          <p class="card-text">Email: {{ card.email }}</p>
-          <p class="card-text">Téléphone: {{ card.phoneNumber }}</p>
-          <p class="card-text">
-              {{ card.address1 }} <br>
-              {{ card.address2 }} <br>
-              {{ card.postCode }} {{ card.city }}
-          </p>
+<div class="d-flex justify-content-center flex-wrap">
+  {% for card in cards %}
+    <article class="mb-3 col-6 col-lg-4 col-xxl-3 p-1">
+      <div class="card shadow h-100">
+        <div class="row g-0">
+          <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <img src="{{ vich_uploader_asset(card, 'imageFile')|default('https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png') }}" class="img-fluid rounded-start" alt="">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ card.civility }} {{ card.lastname }} {{ card.firstname }}</h5>
+              <p class="card-text">Email: {{ card.email }}</p>
+              <p class="card-text">Téléphone: {{ card.phoneNumber }}</p>
+              <p class="card-text">
+                  {{ card.address1 }} <br>
+                  {{ card.address2 }} <br>
+                  {{ card.postCode }} {{ card.city }}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-{% endfor %}
+    </article>
+  {% endfor %}
+</div>
 
 {% endblock %}
