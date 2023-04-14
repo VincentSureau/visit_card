@@ -12,8 +12,10 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(CardRepository $cardRepository): Response
     {
+        $cards = $cardRepository->findAll();
+
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+            'cards' => $cards,
         ]);
     }
 }

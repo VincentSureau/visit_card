@@ -3,23 +3,27 @@
 {% block title %}Liste des cartes de visite{% endblock %}
 
 {% block body %}
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" class="img-fluid rounded-start" alt="">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">M. Nom Prénom</h5>
-        <p class="card-text">Email: xxx</p>
-        <p class="card-text">Téléphone: xxx</p>
-        <p class="card-text">
-            Adresse 1 <br>
-            Adresse 2 <br>
-            13130 Berre l'étang
-        </p>
+
+{% for card in cards %}
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" class="img-fluid rounded-start" alt="">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ card.civility }} {{ card.lastname }} {{ card.firstname }}</h5>
+          <p class="card-text">Email: {{ card.email }}</p>
+          <p class="card-text">Téléphone: {{ card.phoneNumber }}</p>
+          <p class="card-text">
+              {{ card.address1 }} <br>
+              {{ card.address2 }} <br>
+              {{ card.postCode }} {{ card.city }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% endfor %}
+
 {% endblock %}
