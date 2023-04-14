@@ -34,7 +34,7 @@ class AppFixtures extends Fixture
                 ->setPhoneNumber($faker->mobileNumber())
                 ->setAddress1($faker->streetAddress())
                 ->setAddress2($faker->secondaryAddress())
-                ->setPostCode($faker->departmentNumber().'000')
+                ->setPostCode($faker->departmentNumber() .'00')
                 ->setCity($faker->city())
                 ->setCivility($faker->title())
             ;
