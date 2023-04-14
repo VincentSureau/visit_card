@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     public function index(CardRepository $cardRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $pagination = $paginator->paginate(
-            $cardRepository->findAll(), /* query NOT result */
+            $cardRepository->findBy(['isPrivate' => false], ['id' => 'DESC']), /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/
             6 /*limit per page*/
         );

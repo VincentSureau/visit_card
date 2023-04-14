@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class CardType extends AbstractType
 {
@@ -60,6 +61,10 @@ class CardType extends AbstractType
             ])
             ->add('city', TextType::class, [
                 'label' => 'Ville'
+            ])
+            ->add('isPrivate', CheckboxType::class, [
+                'required' => false,
+                'label' => 'Carte privée'
             ])
         ;
     }

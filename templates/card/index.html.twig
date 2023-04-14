@@ -22,6 +22,7 @@
                             <th>PostCode</th>
                             <th>City</th>
                             <th>Civility</th>
+                            <th>Privé</th>
                             <th>actions</th>
                         </tr>
                     </thead>
@@ -38,6 +39,7 @@
                             <td>{{ card.postCode }}</td>
                             <td>{{ card.city }}</td>
                             <td>{{ card.civility }}</td>
+                            <td>{{ card.isPrivate ? 'Oui' : 'Non' }}</td>
                             <td>
                                 <a href="{{ path('app_card_show', {'id': card.id}) }}">show</a>
                                 <a href="{{ path('app_card_edit', {'id': card.id}) }}">edit</a>
